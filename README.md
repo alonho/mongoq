@@ -7,6 +7,8 @@ mongoq - Making MongoDB queries fun again
 Algebra
 -------
 
+	>>> from mongoq import Q
+
 	>>> Q.attr == 3
 	{'attr': 3}
 	
