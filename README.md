@@ -4,6 +4,11 @@ mongoq - Making MongoDB queries fun again
 * Build complex mongo queries using simpler python syntax.
 * Verify query syntax without running a server.
 
+Installation
+------------
+
+	pip install mongoq
+
 Algebra
 -------
 
@@ -80,3 +85,4 @@ Custom Queries
 	
 	>>> (Q.attr > 0).value({'$bla': 3})
 	{'attr': {'$gt': 0, '$bla': 3}}
+
