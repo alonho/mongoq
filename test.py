@@ -4,7 +4,7 @@ from unittest import TestCase
 class TestQuery(TestCase):
 
     def assert_queries_equal(self, q1, q2):
-        self.assertEquals(str(q1), str(q1))
+        self.assertEqual(str(q1), str(q1))
     
     def test_eq(self):
         self.assert_queries_equal({'a.b': 3}, Q.a.b == 3)
@@ -57,7 +57,7 @@ class TestQuery(TestCase):
 
     def test_multiple_fields_set(self):
         with self.assertRaises(QueryError):
-            (((Q.a == 3) + (Q.b == 4)).bla)
+            ((Q.a == 3) + (Q.b == 4)).bla
 
     def test_override(self):
         with self.assertRaises(QueryError):
