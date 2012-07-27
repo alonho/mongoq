@@ -73,3 +73,7 @@ class TestQuery(TestCase):
 
     def test_mod(self):
         self.assert_queries_equal(Q.a.mod(3, 2), {'a': {'$mod': [3, 2]}})
+
+    def test_overrides(self):
+        with self.assertRaises(QueryError):
+            Q.a.regex('bla').regex('blo')

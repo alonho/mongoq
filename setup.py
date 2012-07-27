@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(name='mongoq',
       version='0.1',
-      classifiers = ["Development Status :: 4 - Beta",
+      classifiers = ["Development Status :: 3 - Alpha",
                      "Intended Audience :: Developers",
                      "License :: OSI Approved :: BSD License",
                      "Programming Language :: Python :: 2"

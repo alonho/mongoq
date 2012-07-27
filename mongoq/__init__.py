@@ -31,6 +31,7 @@ class Query(dict):
         if isinstance(value, dict) and self.field in self:
             if not isinstance(q[self.field], dict):
                 raise QueryError('Can only add keys to documents, not to: {}'.format(q[self.field]))
+            self._verify_not_overrides(q[self.field], value)
             q[self.field] = Query(q[self.field], **value)
         else:
             q[self.field] = value
@@ -46,10 +47,13 @@ class Query(dict):
             q.field = field
         return q
 
-    def __add__(self, other):
-        overriden = set(self) & set(other)
+    def _verify_not_overrides(self, d1, d2):
+        overriden = set(d1) & set(d2)
         if overriden:
-            raise QueryError("The following fields will be overriden: {} for Queries: {}, {}".format(overriden, self, other))
+            raise QueryError("The following fields will be overriden: {} for Queries: {}, {}".format(list(overriden), d1, d2))
+        
+    def __add__(self, other):
+        self._verify_not_overrides(self, other)
         return Query(self, **other)
 
     def __invert__(self):
