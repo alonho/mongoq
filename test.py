@@ -70,3 +70,6 @@ class TestQuery(TestCase):
     def test_add_invalid_type(self):
         with self.assertRaises(TypeError):
             (Q.a == 3) + 1
+
+    def test_mod(self):
+        self.assert_queries_equal(Q.a.mod(3, 2), {'a': {'$mod': [3, 2]}})

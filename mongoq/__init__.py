@@ -54,6 +54,9 @@ class Query(dict):
 
     def __invert__(self):
         return Query({'$not': self})
+
+    def mod(self, d, m):
+        return self.value({'$mod': [d, m]})
         
     __eq__ = value
     
