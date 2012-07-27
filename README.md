@@ -7,7 +7,6 @@ mongoq - Making MongoDB queries fun again
 Algebra
 -------
 
-	```python
 	>>> Q.attr == 3
 	{'attr': 3}
 	
@@ -32,15 +31,12 @@ Algebra
 Nested Documents
 ----------------
 
-	```python
 	>>> Q.subdoc.attr > 5
 	{'subdoc.attr': {'$gt': 5}}
-	```
 	
 Builtins
 --------
 	
-	```python
 	>>> Q.attr.notcontained([1, 2, 3])
 	{'attr': {'$in': [1, 2, 3]}}
 
@@ -61,12 +57,10 @@ Builtins
 	
 	>>> Q.attr.regex('bla').options('i')
 	{'attr': {'$options': 'i', '$regex': 'bla'}}
-	```
 	
 Array Queries
 -------------
 
-	```python
 	>>> Q.array.all([1,2,3])
 	{'array': {'$all': [1, 2, 3]}}
 	
@@ -75,12 +69,10 @@ Array Queries
 	
 	>>> Q.array.elemMatch(Q.attr > 1)
 	{'array': {'$elemMatch': {'attr': {'$gt': 1}}}}
-	```
 
 Custom Queries
 --------------
 
-	```python
 	>>> Q.attr.value({'$bla': 3})
 	{'attr': {'$bla': 3}}
 	
