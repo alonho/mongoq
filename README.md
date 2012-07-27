@@ -40,10 +40,10 @@ Builtins
 --------
 	
 	>>> Q.attr.notcontained([1, 2, 3])
-	{'attr': {'$in': [1, 2, 3]}}
+	{'attr': {'$nin': [1, 2, 3]}}
 
 	>>> Q.attr.contained([1, 2, 3])
-	{'attr': {'$nin': [1, 2, 3]}}
+	{'attr': {'$in': [1, 2, 3]}}
 
 	>>> Q.attr.exists(False)
 	{'attr': {'$exists': False}}	
