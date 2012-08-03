@@ -74,8 +74,6 @@ class Query(dict):
     __lt__ = operand_maker('$lt')
     __ge__ = operand_maker('$gte')
     __le__ = operand_maker('$lte')
-    __lt__ = operand_maker('$lt')
-    __lt__ = operand_maker('$lt')
     
     exists = operand_maker('$exists')
     contained = operand_maker('$in')
