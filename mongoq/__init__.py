@@ -1,4 +1,3 @@
-
 def operand_maker(operand):
     def func(self, value):
         return self.value({operand: value})

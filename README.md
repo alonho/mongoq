@@ -4,8 +4,12 @@ mongoq - Making MongoDB queries fun again
 * Build complex mongo queries using simpler python syntax.
 * Verify query syntax without running a server.
 
+Follow @alonhorev on twitter for updates.
+
 Installation
 ------------
+
+mongoq has been tested on python2.7 and 3.3 (no reason why it shouldn't work on others).
 
 	pip install mongoq
 
